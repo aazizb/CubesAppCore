@@ -21,5 +21,22 @@ namespace CubesAppCore.Test
             //Assert
             Assert.False(collide);
         }
+        [Fact]
+        public void Cubes_do_collide()
+        {
+            //Arrange
+            Cube cubeA = new CubeBuilder()
+                            .WithCenter(new Point(2, 2, 2))
+                            .WithLength(2)
+                            .Build();
+            Cube cubeB = new CubeBuilder()
+                            .WithCenter(new Point(4, 4, 4))
+                            .WithLength(2)
+                            .Build();
+            //Act
+            bool collide = cubeA.CollidesWith(cubeB);
+            //Assert
+            Assert.True(collide);
+        }
     }
 }
