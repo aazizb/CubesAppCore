@@ -72,5 +72,23 @@ namespace CubesAppCore
             //Assert
             Assert.Equal(8, volume);
         }
+        [Fact]
+        public void Cubes_one_contains_the_other()
+        {
+            //Arrange
+            Cube cubeA = new CubeBuilder()
+                            .WithCenter(new Point(3, 3, 3))
+                            .WithLength(3)
+                            .Build();
+            Cube cubeB = new CubeBuilder()
+                            .WithCenter(new Point(3, 3, 3))
+                            .WithLength(2)
+                            .Build();
+            //Act
+            double volume = cubeA.CommonVolumeWith(cubeB);
+            //Assert
+            Assert.Equal(8, volume);
+        }
+
     }
 }
