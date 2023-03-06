@@ -2,23 +2,23 @@
 {
     internal class CubeBuilder : ICubeBuilder
     {
-        public CubeBuilder()
-        {
-        }
-
+        Point point;
+        double length;
         public Cube Build()
         {
-            throw new NotImplementedException();
+            return new Cube(point, length);
         }
 
         public ICubeBuilder WithCenter(Point point)
         {
-            throw new NotImplementedException();
+            this.point = point;
+            return this;
         }
 
         public ICubeBuilder WithLength(double length)
         {
-            throw new NotImplementedException();
+            this.length = length;
+            return this;
         }
     }
 }
