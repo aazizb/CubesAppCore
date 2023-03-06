@@ -1,0 +1,11 @@
+Given two aligned cubes: cube A with center Point(a, b, c) and with edge length L; 
+cube B with center Point(d, e, f) and with edge length M
+Design an application with the following requirements:
+
+1.The application should check wether the two cubes collide; if so
+2.Calculate the intersected volume.
+
+Implementation:
+Use TDD in C# to develop requirements in .NET applications.
+Use the fluent builder pattern to create cubes. By doing so, we can create cubes 
+step by step, and then connect all the parts together, thus avoiding complex constructor. It's a grood practice in OOP.
