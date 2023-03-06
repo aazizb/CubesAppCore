@@ -2,7 +2,7 @@
 
 namespace CubesAppCore
 {
-    internal interface ICubeBuilder
+    public interface ICubeBuilder
     {
         ICubeBuilder WithCenter(Point point);
         ICubeBuilder WithLength(double length);

@@ -1,6 +1,6 @@
 ﻿namespace CubesAppCore
 {
-    internal class Point
+    public class Point
     {
         public double X { get; }
         public double Y { get; }

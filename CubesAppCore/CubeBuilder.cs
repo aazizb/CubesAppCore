@@ -1,6 +1,6 @@
 ﻿namespace CubesAppCore.Test
 {
-    internal class CubeBuilder : ICubeBuilder
+    public class CubeBuilder : ICubeBuilder
     {
         Point point;
         double length;

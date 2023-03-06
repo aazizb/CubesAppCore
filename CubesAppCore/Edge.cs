@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CubesAppCore
 {
-    internal class Edge
+    public class Edge
     {
         private double Start { get; }
         private double End { get; }

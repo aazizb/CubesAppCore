@@ -1,6 +1,6 @@
 ﻿namespace CubesAppCore.Test
 {
-    internal class Cube
+    public class Cube
     {
         private Edge Width { get; }
         private Edge Height { get; }
@@ -12,7 +12,7 @@
             Height = new Edge(center.Y, length);
             Depth = new Edge(center.Z, length);
         }
-        internal bool CollidesWith(Cube cube)
+        public bool CollidesWith(Cube cube)
         {
             return Width.Collides(cube.Width)
                 || Height.Collides(cube.Height)
