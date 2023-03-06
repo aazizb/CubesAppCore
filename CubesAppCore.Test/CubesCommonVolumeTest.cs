@@ -89,6 +89,23 @@ namespace CubesAppCore
             //Assert
             Assert.Equal(8, volume);
         }
+        [Fact]
+        public void cubes_with_same_height_and_depth()
+        {
+            //Arrange
+            Cube cubeA = new CubeBuilder()
+                            .WithCenter(new Point(2, 2, 2))
+                            .WithLength(2)
+                            .Build();
+            Cube cubeB = new CubeBuilder()
+                            .WithCenter(new Point(3, 2, 2))
+                            .WithLength(2)
+                            .Build();
+            //Act
+            double volume = cubeA.CommonVolumeWith(cubeB);
+            //Assert
+            Assert.Equal(4, volume);
+        }
 
     }
 }
