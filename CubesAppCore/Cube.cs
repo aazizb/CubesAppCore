@@ -19,9 +19,11 @@
                 || Depth.Collides(cube.Depth);
         }
 
-        public double CommonVolumeWith(Cube cubeB)
+        public double CommonVolumeWith(Cube cube)
         {
-            throw new NotImplementedException();
+            return Width.Overlap(cube.Width)
+                 * Height.Overlap(cube.Height)
+                 * Depth.Overlap(cube.Depth);
         }
     }
 }
