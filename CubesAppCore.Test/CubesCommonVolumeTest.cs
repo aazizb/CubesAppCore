@@ -31,7 +31,24 @@ namespace CubesAppCore
                             .Build();
             Cube cubeB = new CubeBuilder()
                             .WithCenter(new Point(2, 2, 2))
-                            .WithLength(2.5)
+                            .WithLength(3)
+                            .Build();
+            //Act
+            double volume = cubeA.CommonVolumeWith(cubeB);
+            //Assert
+            Assert.Equal(8, volume);
+        }
+        [Fact]
+        public void Cubes_do_touch()
+        {
+            //Arrange
+            Cube cubeA = new CubeBuilder()
+                            .WithCenter(new Point(2, 2, 2))
+                            .WithLength(2)
+                            .Build();
+            Cube cubeB = new CubeBuilder()
+                            .WithCenter(new Point(4, 2, 2))
+                            .WithLength(2)
                             .Build();
             //Act
             double volume = cubeA.CommonVolumeWith(cubeB);
