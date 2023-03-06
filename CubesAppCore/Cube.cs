@@ -18,5 +18,10 @@
                 || Height.Collides(cube.Height)
                 || Depth.Collides(cube.Depth);
         }
+
+        public double CommonVolumeWith(Cube cubeB)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
