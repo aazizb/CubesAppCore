@@ -123,6 +123,23 @@ namespace CubesAppCore
             //Assert
             Assert.Equal(4, volume);
         }
+        [Fact]
+        public void cubes_with_same_depth_width()
+        {
+            //Arrange
+            Cube cubeA = new CubeBuilder()
+                            .WithCenter(new Point(2, 2, 2))
+                            .WithLength(2)
+                            .Build();
+            Cube cubeB = new CubeBuilder()
+                            .WithCenter(new Point(2, 3, 2))
+                            .WithLength(2)
+                            .Build();
+            //Act
+            double volume = cubeA.CommonVolumeWith(cubeB);
+            //Assert
+            Assert.Equal(4, volume);
+        }
 
     }
 }
