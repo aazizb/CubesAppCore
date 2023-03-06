@@ -1,4 +1,4 @@
-﻿using CubesAppCore.Test;
+﻿using CubesAppCore;
 
 namespace CubesAppCore
 {

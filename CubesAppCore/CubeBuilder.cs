@@ -1,4 +1,4 @@
-﻿namespace CubesAppCore.Test
+﻿namespace CubesAppCore
 {
     public class CubeBuilder : ICubeBuilder
     {
