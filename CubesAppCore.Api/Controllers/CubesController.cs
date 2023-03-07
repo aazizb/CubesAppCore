@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CubesAppCore.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class CubesController : ControllerBase
     {
@@ -20,9 +20,19 @@ namespace CubesAppCore.Api.Controllers
         /// <param name="requestModel"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult GetCommonVolume([FromBody] CubesRequestModel requestModel)
+        public IActionResult Volume([FromBody] CubesRequestModel requestModel)
         {
-            //this peace of code should go in another class out side the controller
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            /*this peace of code should go outside the controller in another class or another layer
+            * also we should Use DTOs to move data back and forth and keep 
+            * controllers as thin as possible. It is a good practice to use async/await
+            * if possible. We should also think versioning as business changes.
+            * It shouldbe also noted caching significantly improve performance/user experience.
+            * API documentation is also extremely vital.
+            */
             try
             {
                 Cube cubeA = new CubeBuilder()
@@ -39,8 +49,8 @@ namespace CubesAppCore.Api.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError(ex.Message, ex);
-                return BadRequest();
+                logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
             }
         }
     }
